@@ -30,16 +30,8 @@ Rows in RAW_interactions: 731,927
 
 Columns in RAW_recipes:
 <ul>
-    <li>name: Recipe name</li>
-    <li>id: Recipe ID</li>
-    <li>minutes: Amount of time to prepare the recipe</li>
-    <li>contributor_id: User ID who created the recipe</li>
-    <li>submitted: Date recipe was submitted</li>
-    <li>Categories and words assgined to recipes, such as "vegetarian"</li>
-    <li> Nutrition: Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value”</li>
-    <li>n_steps: number of steps in recipe</li>
-    <li>steps: text for recipe steps</li>
-    <li>description: user description of recipe</li>
+    <li>rating: rating given for recipe</li>
+    <li>review: review given for recipe</li>
 </ul>
 
 Columns in RAW_recipes:
@@ -55,6 +47,11 @@ Columns in RAW_recipes:
 
 
 <h2>Data Cleaning and Exploratory Data Analysis</h2>
+
+<h3>Introduction</h3>
+
+
+
 <h3> Data Cleaning </h3>
 
 <h3> Univariate Analysis </h3>
@@ -90,19 +87,8 @@ Columns in RAW_recipes:
  ></iframe>
 
 <h3> Interesting Aggregates </h3>
- prep_time_group  calories  total_fat  sugar  sodium  protein  saturated_fat  \
-0        0–15 min    301.65      23.45  66.56   27.42    16.57          27.07   
-1       16–30 min    369.70      27.96  45.72   23.77    31.31          33.47   
-2       31–60 min    432.15      33.04  60.68   27.09    34.56          42.44   
-3      61–120 min    564.28      43.70  95.62   32.61    40.69          56.51   
-4        120+ min    547.51      39.85  68.84   47.69    57.29          48.27   
+'| prep_time_group | calories | total_fat | sugar | sodium | protein | saturated_fat | carbohydrates |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| 0–15 min | 301.65 | 23.45 | 66.56 | 27.42 | 16.57 | 27.07 | 10.09 |\n| 16–30 min | 369.7 | 27.96 | 45.72 | 23.77 | 31.31 | 33.47 | 11.42 |\n| 31–60 min | 432.15 | 33.04 | 60.68 | 27.09 | 34.56 | 42.44 | 13.67 |\n| 61–120 min | 564.28 | 43.7 | 95.62 | 32.61 | 40.69 | 56.51 | 18.51 |\n| 120+ min | 547.51 | 39.85 | 68.84 | 47.69 | 57.29 | 48.27 | 15.66 |'
 
-   carbohydrates  
-0          10.09  
-1          11.42  
-2          13.67  
-3          18.51  
-4          15.66
 <h3> Imputation </h3>
 
 <h2>Framing a Prediction Problem</h2>
