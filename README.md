@@ -48,18 +48,17 @@ Columns in RAW_recipes:
 
 <h2>Data Cleaning and Exploratory Data Analysis</h2>
 <!-- Describe, in detail, the data cleaning steps you took and how they affected your analyses. The steps should be explained in reference to the data generating process. Show the head of your cleaned DataFrame (see Part 2: Report for instructions). -->
+<h3> Data Cleaning </h3>
 Our team performed various steps in the data cleaning process to ensure our dataset was ready to be analyzed: 
 
 First, we performed a left merge between Recipes and Interactions on the recipe ID in order to bridge the two datasets. 
 
 Then, we noted that user ratings of 0 existed and so, we replaced them with NaN so the average rating calculations are not skewed and there is not a downward bias. 
 
-Next, our team found the average rating for each recipe and added it as a column in order to gain a better understanding of the overall merged dataset.
+Next, our team found the average rating for each recipe as a series and added it as a column in order to gain a better understanding of the overall merged dataset.
 
-Finally, one of the major data cleaning steps we took involved the `nutrition` column 
+Finally, one of the major data cleaning steps we took involved the `nutrition` column. Our team distributed the lists within the rows in order to seperate aspects of `nutrition` such as calories, total_fat, sugar, sodium, protein, saturated_fat and carbohydrates. 
 
-
-<h3> Data Cleaning </h3>
 
 <h3> Univariate Analysis </h3>
  <iframe
@@ -94,6 +93,7 @@ Finally, one of the major data cleaning steps we took involved the `nutrition` c
  ></iframe>
 
 <h3> Interesting Aggregates </h3>
+
 | prep_time_group | calories | total_fat | sugar | sodium | protein | saturated_fat | carbohydrates |
 |:----------------|---------:|----------:|------:|-------:|--------:|--------------:|---------------:|
 | 0-15 min        |   288.56 |      9.31 | 32.35 | 385.52 |   11.96 |          5.75 |          32.37 |
