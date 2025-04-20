@@ -25,6 +25,12 @@ Question: What are the different aspects that could impact the calorie content o
 <h2>Data Cleaning and Exploratory Data Analysis</h2>
 <h3> Data Cleaning </h3>
 <h3> Univariate Analysis </h3>
+ <iframe
+ src="assets/Distribution-of-Calories.html"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
 <h3> Bivariate Analysis </h3>
 <h3> Interesting Aggregates </h3>
 <h3> Imputation </h3>
