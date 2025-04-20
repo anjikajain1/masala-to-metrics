@@ -46,12 +46,9 @@ Columns in RAW_recipes:
 <ul>
     <li>name: Recipe name</li>
     <li>minutes: Amount of time to prepare the recipe</li>
-    <li>contributor_id: User ID who created the recipe</li>
-    <li>submitted: Date recipe was submitted</li>
     <li>Categories and words assgined to recipes, such as "vegetarian"</li>
     <li> Nutrition: Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value”</li>
     <li>n_steps: number of steps in recipe</li>
-    <li>steps: text for recipe steps</li>
     <li>description: user description of recipe</li>
 </ul>
 
@@ -69,13 +66,14 @@ Columns in RAW_recipes:
  ></iframe>
 
 <iframe
- src="assets/Distribution-of-Total-Fat-Across-All-Recipes.html.html"
+ src="assets/Distribution-of-Total-Fat-Across-All-Recipes.html"
  width="800"
  height="600"
  frameborder="0"
  ></iframe>
  
 <h3> Bivariate Analysis </h3>
+
  <iframe
  src="assets/Calories-vs-Number-of-Ingredients.html"
  width="800"
