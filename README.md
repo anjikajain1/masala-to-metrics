@@ -36,20 +36,27 @@ Columns in RAW_recipes:
 
 Columns in RAW_recipes:
 <ul>
-    <li>name: Recipe name</li>
-    <li>minutes: Amount of time to prepare the recipe</li>
+    <li>`name`: Recipe name</li>
+    <li>`minutes`: Amount of time to prepare the recipe</li>
     <li>Categories and words assgined to recipes, such as "vegetarian"</li>
-    <li> Nutrition: Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value”</li>
-    <li>n_steps: number of steps in recipe</li>
-    <li>description: user description of recipe</li>
+    <li> `Nutrition`: Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value”</li>
+    <li>`n_steps`: number of steps in recipe</li>
+    <li>`description`: user description of recipe</li>
 </ul>
 
 
 
 <h2>Data Cleaning and Exploratory Data Analysis</h2>
+<!-- Describe, in detail, the data cleaning steps you took and how they affected your analyses. The steps should be explained in reference to the data generating process. Show the head of your cleaned DataFrame (see Part 2: Report for instructions). -->
+Our team performed various steps in the data cleaning process to ensure our dataset was ready to be analyzed: 
 
-<h3>Introduction</h3>
+First, we performed a left merge between Recipes and Interactions on the recipe ID in order to bridge the two datasets. 
 
+Then, we noted that user ratings of 0 existed and so, we replaced them with NaN so the average rating calculations are not skewed and there is not a downward bias. 
+
+Next, our team found the average rating for each recipe and added it as a column in order to gain a better understanding of the overall merged dataset.
+
+Finally, one of the major data cleaning steps we took involved the `nutrition` column 
 
 
 <h3> Data Cleaning </h3>
