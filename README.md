@@ -90,7 +90,8 @@ Explanation: From this histogram we see that the majority of recipes have calori
  frameborder="0"
  ></iframe>
 
-Explanation: From this scatter plot we see how most recipes are around 10,000 calories even as the number of ingrediants increases showcasing how ingrediants aren't may not be majorly relevant to the number of calories in a recipe. However, we also noticed how in a few cases as ingrediants increase the calorie count reduces which seemed not as intuitive for our team. 
+Explanation: From this scatter plot we see how most recipes are around 10,000 calories even as the number of ingrediants increases showcasing how ingrediants aren't may not be majorly relevant to the number of calories in a recip
+e. However, we also noticed how in a few cases as ingrediants increase the calorie count reduces which seemed not as intuitive for our team. 
 
 <h3> Interesting Aggregates </h3>
 
@@ -105,7 +106,7 @@ Explanation: From this scatter plot we see how most recipes are around 10,000 ca
 
 <h3> Imputation </h3>
 
-Prior to imputation there were missing values in `name`, `description`,`user_id`, `recipe_id`, `date`, `rating`, `review` and `avg_rating`. This presented as opportunities for our team to impute these values. We decided that constant imputation was only necessary for `name`, `description`,`user_id`, `recipe_id`, `date`, and `review`. This is mainly because of the nature of the variables as textual (categorical) variables filling them in with text indicating "No ___ were provided." would not change the data in any fundamental way and for our analysis they weren't very relevant. 
+Prior to imputation there were missing values in `name`, `description`,`user_id`, `recipe_id`, `date`, `rating`, `review` and `avg_rating`. This presented as opportunities for our team to impute these values. We decided tat iconstant mputation was only necessary fror `name`, `description`,`user_id`, `recipe_id`, `date`, and `review`. This is mainly because of the nature of the variables as textual (categ)rical variables filling them in with text indicating "No ___ were provided." would not change the data in any fundamental way and for our analysis they weren't very relevant. 
 
 We decided to not impute `rating` and `avg_rating` as these values were integral to our analysis and numerical. If we were to impute these values through mean imputation it would not be an accurate representation of the inputted values by the reviwer. This would likely introduce bias and change overall data analysis in an unpredictable way. 
 
@@ -125,9 +126,10 @@ We will be using Mean Absolute Error (MAE), to evaluate our model. It will tell 
 
 We will also use Root Mean Square Error (RMSE) as it provides an overall sense of prediction error, but will keep in mind that it is weighted more towards large error. 
 
-We will not look at the R^2 
-core as it isn'
- intiuative for users, and provides a value which is unitless. This is easiter to interpret for any outside users since metrics like RMSE are weighted more towards large errors and R^2 score provides a value which is unitless (not as intuitive). MAE treats all errors equally. 
+We will not look at the R^2 score as it isn't intiuative for users, and provides a value which is unitless. 
+
+
+
 <h2>Baseline Model</h2>
 
 <h3>Model Description and Features</h3>
@@ -148,12 +150,10 @@ calories: Calorie content, measured as a continous value
 <h3>Preprocessing Steps</h3>
 We defined a sub-pipeline for numerical features, to use SimpleImputer to fill in missing values a replace them with the mean value in each column. 
 
+We evaluated the model on a test set of 20% of the data.
+
 <h3>Model Performance</h3>
-
-
-We evaluated the model on a test set of 20% of the data.MAE: 
-
-<SE Value: 9719.29 (RSME: 98.5)
+MSE Value: 9719.29 (RSME: 98.5)
 Interpretation: This measures the average square difference between predicted and actual calorie values. Because the errors are squared it may have penalized larger error more. 
 
 MAE Value: 55.75
@@ -161,5 +161,17 @@ This means our baseline model's calorie predictions are off by an average of 55.
 
 <h3>Is This a Good Model?</h3>
 
-Based on MAE value of 55.75, if our recipes on average have hundreds of calories being off by 56 could be okay for some users who just want a sort of general understanding of how calorie dense their meals are. However, for users who are looking for accurate predictions an average of 56 calories could be a large issue for them. A MSE value of 9719 is very high, suggesting that the errors that are occuring must be large. Since we use only two features (total_fat + carbohy)rates, it is probably not highlighting how all the different nurtrional components( )protein, sugar, etc.i impant the calories. This is an okay baseline mode, but not a great model, as we are not super precise. al Model</h2>
-MSE: 5142.83MAE: 21/.36We  introduce two engineered dfeqaatures to   capure the relationa ture better predictions:suar_gar _to-_protein _ratio: The ratio capturres the ratio between sugar and protein in a recipe . High- sugar to protein ratios indiate caloriries d=de-denccese dessets, while lower ratio a's are more protein-rich and possible uy more healtheier .ier. This ratio might dsiniggify   gnify more     e than just taing int   sugar and protein . total_macro_sum  : This is the sum of the key macro  siz ox of the nutrional component ()total fat, sugar, souyium , protein, statured _fat, carbohydrates . CaAll calories come directly from thre nutrional components. 
+Based on MAE value of 55.75, if our recipes on average have hundreds of calories being off by 56 could be okay for some users who just want a sort of general understanding of how calorie dense their meals are. However, for users who are looking for accurate predictions an average of 56 calories could be a large issue for them. A MSE value of 9719 is very high, suggesting that the errors that are occuring must be large. Since we use only two features (total_fat + carbohydrates), it is probably not highlighting how all the different nurtrional components (protein, sugar, etc.) impact the calories. This is an okay baseline mode, but not a great model, as we are not super precise. 
+
+<h2>Final Model</h2>
+
+We introduce two engineered features to capture better predictions:
+
+sugar_to_protein_ratio: The ratio captures the ratio between sugar and protein in a recipe. High sugar to protein ratios indicate calorie-dense dessets, while lower ratio's are more protein-rich and possibly more healthier. This ratio might signify more than just taking sugar and protein. 
+
+total_macro_sum: This is the sum of six of the nutrional component (total fat, sugar, sodium, protein, statured_fat, carbohydrates). All calories come directly from the nutrional components. 
+
+
+
+MSE: 5142.83
+MAE: 21.36
