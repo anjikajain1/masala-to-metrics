@@ -246,7 +246,15 @@ We used a Random Forest Regressor, choosen for it's ability to be robust to outl
 
 <h4>Hyperparameter Tuning</h4>
 
-When tuning a Random Forest Regressor we wanted to choose hyperparameters that are high-impact and worth tunning 
+When tuning our Random Forest Regressor we wanted to choose hyperparameters that are high-impact and worth tunning. We chose these following hyperparamters to tune:
+<ul>
+    <li>n_estimators - Numbers of trees (more trees means better performance</li>
+    <li>max_depth - Maximum depth of each tree (too depth means overfitting of model and too shallow mean underfitting</li>
+    <li>min_samples_split - Minimum number of samples required to split an internal node (prevents the tree from growing so deep)</li>
+</ul>
+
+<h3>Best Hyperparamters</h3>
+
 
 <h3>Model's Performance and Evaluation</h3>
 MSE: 5142.83
