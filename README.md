@@ -61,14 +61,15 @@ Finally, one of the major data cleaning steps we took involved the `nutrition` c
 
 Below we've shown the `head` of the cleaned Dataframe.
 
-<pre style="max-height:200px; overflow:auto;">
+<div style="overflow-x: auto; max-width: 100%;">
+<pre>
 
-| Name                      | ID     | Minutes | Contributor |
-|---------------------------|--------|---------|-------------|
-| 1 brownies in the world best ever | 333281 | 40      | 985       |
-
+| name                                 |     id |   minutes |   contributor_id | submitted           | tags                                                                                                                                                                                                                        |   n_steps | steps                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | description                                                                                                                                                                                                                                                          | ingredients                                                                                                                                                                    |   n_ingredients |   user_id |   recipe_id | date                |   rating | review                                                                                                                                                                                                                                                         |   avg_rating |   calories |   total_fat |   sugar |   sodium |   protein |   saturated_fat |   carbohydrates |
+|:-------------------------------------|-------:|----------:|-----------------:|:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|----------:|------------:|:--------------------|---------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|
+| 1 brownies in the world    best ever | 333281 |        40 |           985201 | 2008-10-27 00:00:00 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'for-large-groups', 'desserts', 'lunch', 'snacks', 'cookies-and-brownies', 'chocolate', 'bar-cookies', 'brownies', 'number-of-servings'] |        10 | ['heat the oven to 350f and arrange the rack in the middle', 'line an 8-by-8-inch glass baking dish with aluminum foil', 'combine chocolate and butter in a medium saucepan and cook over medium-low heat , stirring frequently , until evenly melted', 'remove from heat and let cool to room temperature', 'combine eggs , sugar , cocoa powder , vanilla extract , espresso , and salt in a large bowl and briefly stir until just evenly incorporated', 'add cooled chocolate and mix until uniform in color', 'add flour and stir until just incorporated', 'transfer batter to the prepared baking dish', 'bake until a tester inserted in the center of the brownies comes out clean , about 25 to 30 minutes', 'remove from the oven and cool completely before cutting'] | these are the most; chocolatey, moist, rich, dense, fudgy, delicious brownies that you'll ever make.....sereiously! there's no doubt that these will be your fav brownies ever for you can add things to them or make them plain.....either way they're pure heaven! | ['bittersweet chocolate', 'unsalted butter', 'eggs', 'granulated sugar', 'unsweetened cocoa powder', 'vanilla extract', 'brewed espresso', 'kosher salt', 'all-purpose flour'] |               9 |    386585 |      333281 | 2008-11-19 00:00:00 |        4 | These were pretty good, but took forever to bake.  I would send it ended up being almost an hour!  Even then, the brownies stuck to the foil, and were on the overly moist side and not easy to cut.  They did taste quite rich, though!  Made for My 3 Chefs. |            4 |      138.4 |          10 |      50 |        3 |         3 |              19 |               6 |
 
 </pre>
+</div>
 
 <h3> Univariate Analysis </h3>
 
@@ -172,7 +173,20 @@ sugar_to_protein_ratio: The ratio captures the ratio between sugar and protein i
 
 total_macro_sum: This is the sum of six of the nutrional component (total fat, sugar, sodium, protein, statured_fat, carbohydrates). All calories come directly from the nutrional components. This feature acts as a overall proxy for nutrient density. 
 
+<h3>Features</h3>
 
+<h4>Quantative Features</h4>
+carbohydrates: Sugar content in Percent Daily Value (PDV%)
+total_fat: Total Fat in Percent Daily Value (PDV%)
+<h4>Engineered Features</h4>
+sugar_to_protein_ration: The ration of sugar to protein in a recipe
+total_macro_sum: The sum of six key nutrient components
+<h4>Nominal Features</h4>
+None
+<h4>Ordinal Features</h4>
+None
+<h4>Response Varaible</h4>
+calories: Calorie content, measured as a continous value
 
 
 
