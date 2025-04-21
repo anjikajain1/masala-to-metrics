@@ -35,14 +35,13 @@ Columns in RAW_recipes:
 </ul>
 
 Columns in RAW_recipes:
-<ul>
-    <li> `name` : Recipe name</li>
-    <li> `minutes` : Amount of time to prepare the recipe</li>
-    <li>Categories and words assgined to recipes, such as "vegetarian"</li>
-    <li> `Nutrition` : Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value”</li>
-    <li> `n_steps` : number of steps in recipe</li>
-    <li> `description` : user description of recipe</li>
-</ul>
+- `name` : Recipe name
+- `minutes` : Amount of time to prepare the recipe
+Categories and words assgined to recipes, such as "vegetarian"
+- `Nutrition` : Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value”
+- `n_steps` : number of steps in recipe
+- `description` : user description of recipe
+
 
 
 
@@ -173,7 +172,8 @@ sugar_to_protein_ratio: The ratio captures the ratio between sugar and protein i
 
 total_macro_sum: This is the sum of six of the nutrional component (total fat, sugar, sodium, protein, statured_fat, carbohydrates). All calories come directly from the nutrional components. This feature acts as a overall proxy for nutrient density. 
 
-<h3>Features</h3>
+
+
 
 <h4>Quantative Features</h4>
 carbohydrates: Sugar content in Percent Daily Value (PDV%)
@@ -188,7 +188,13 @@ None
 <h4>Response Varaible</h4>
 calories: Calorie content, measured as a continous value
 
+<h3>Modeling Algorithm</h3>
+We used a Random Forest Regressor, choosen for it's ability to be robust to outliers and irrelevant features, and capture non-linear relationships between nutrients and calories. 
 
+<h4>Hyperparameter Tuning</h4>
 
+When tuning a Random Forest Regressor we wanted to choose hyperparameters that are high-impact and worth tunning 
+
+<h3>Model's Performance and Evaluation</h3>
 MSE: 5142.83
 MAE: 21.36
