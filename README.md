@@ -61,7 +61,7 @@ Finally, one of the major data cleaning steps we took involved the `nutrition` c
 
 Below we've shown the `head` of the cleaned Dataframe.
 
-<div style="height:200px; overflow:auto; border:1px solid #ccc;">
+<div style="overflow:auto">
 
 | name                                 |     id |   minutes |   contributor_id | submitted           | tags                                                                                                                                                                                                                        |   n_steps | steps                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | description                                                                                                                                                                                                                                                          | ingredients                                                                                                                                                                    |   n_ingredients |   user_id |   recipe_id | date                |   rating | review                                                                                                                                                                                                                                                                                                                                           |   avg_rating |   calories |   total_fat |   sugar |   sodium |   protein |   saturated_fat |   carbohydrates |
 |:-------------------------------------|-------:|----------:|-----------------:|:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|----------:|------------:|:--------------------|---------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|
@@ -78,6 +78,8 @@ Below we've shown the `head` of the cleaned Dataframe.
  height="600"
  frameborder="0"
  ></iframe>
+ 
+Explanation: From this histogram we see that the majority of recipes have calorie counts under 1000, and it is right skewed. It suggests that most recipes are relatively moderate in calories, and there are less outliers implying that individuals tend to not share recipes higher in calories.
 
  
 <h3> Bivariate Analysis </h3>
@@ -121,5 +123,19 @@ We will be using Mean Absolute Error (MAE), to evaluate our model. It will tell 
 
 <h2>Baseline Model</h2>
 
+<h3>Model Description and Features</h3>
+<strong>We built a baseline linear regression model</strong> to predict the number of calories in recipe based on two nutritional components (carbohydrates, total fat). 
+
+<h3>Features</h3>
+
+<h4>Quantative Features</h4>
+carbohydrates: Sugar content in Percent Daily Value (PDV%)
+total_fat: Total Fat in Percent Daily Value (PDV%)
+<h4>Nominal Features</h4>
+None
+<h4>Ordinal Features</h4>
+None
+<h4>Response Varaible</h4>
+calories: Calorie content, measured as a continous value
 
 <h2>Final Model</h2>
