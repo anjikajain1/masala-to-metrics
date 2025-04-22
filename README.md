@@ -60,7 +60,7 @@ Finally, one of the major data cleaning steps we took involved the `nutrition` c
 
 <h3>Below we've shown the `head` of the cleaned Dataframe.</h3>
 
-<div style="overflow-x: auto; max-width: 100%;">
+<div style="overflow-x:auto; max-width:800px; font-size:12px;">
 
 <table border="1" class="dataframe">
   <thead>
@@ -429,7 +429,7 @@ We built a baseline <strong>linear regression model</strong> to predict the numb
 
 <h4>Quantative Features</h4>
 
-`carbohydrates`: Sugar content in Percent Daily Value (PDV%)
+`carbohydrates`: Sugar content in Percent Daily Value (PDV%) <br></br>
 `total_fat`: Total Fat in Percent Daily Value (PDV%)
 <h4>Nominal Features</h4>
 None
@@ -473,6 +473,8 @@ We introduce two engineered features to capture better predictions:
 <h4>Engineered Features</h4>
 
 `sugar_to_protein_ration`: The ration of sugar to protein in a recipe
+<br></br>
+
 `total_macro_sum`: The sum of six key nutrient components
 <h4>Nominal Features</h4>
 None
@@ -502,7 +504,7 @@ When tuning our Random Forest Regressor we wanted to choose hyperparameters that
 Our model performs best with 100 grown trees allowing it to capture complex patterns in the data. The no limit on the tree depth, allows for the model to learn complex relationships. 
 
 <h3>Model's Performance and Evaluation</h3>
-MSE: 5336.18
+MSE: 5336.18 <br></br>
 MAE: 21.37
 
 MAE dropped by ~62%, and our model on average is only off by about 21 calories. The descrease in the MSE score (~47% lower) also shows that the model is doing better on outliers. The final model captures general patterns.
