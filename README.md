@@ -30,8 +30,11 @@ Rows in RAW_interactions: 731,927
 
 Columns in RAW_recipes:
 <ul>
-    <li>rating: rating given for recipe</li>
-    <li>review: review given for recipe</li>
+    <li>
+
+  `rating`: rating given for recipe</li>
+    <li>
+    `review`: review given for recipe</li>
 </ul>
 
 Columns in RAW_recipes:
@@ -384,14 +387,15 @@ e. However, we also noticed how in a few cases as ingrediants increase the calor
 
 <h3> Interesting Aggregates </h3>
 
-| prep_time_group | calories | total_fat | sugar | sodium | protein | saturated_fat | carbohydrates |
-|:----------------|---------:|----------:|------:|-------:|--------:|--------------:|---------------:|
-| 0-15 min        |   288.56 |      9.31 | 32.35 | 385.52 |   11.96 |          5.75 |          32.37 |
-| 16-30 min       |   275.30 |      8.70 | 24.29 | 436.91 |   10.05 |          6.25 |          41.43 |
-| 31-60 min       |   259.60 |      9.27 | 20.67 | 428.46 |   14.35 |          5.37 |          31.28 |
-| 61-120 min      |   243.64 |      9.61 | 27.61 | 385.96 |   15.65 |          4.65 |          29.28 |
-| 120+ min        |   245.00 |     10.63 | 21.81 | 382.38 |   15.67 |          4.88 |          29.80 |
+| prep_time_group   |   calories |   total_fat |   sugar |   sodium |   protein |   saturated_fat |   carbohydrates |
+|:------------------|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|
+| 0–15 min          |     301.65 |       23.45 |   66.56 |    27.42 |     16.57 |           27.07 |           10.09 |
+| 16–30 min         |     369.7  |       27.96 |   45.72 |    23.77 |     31.31 |           33.47 |           11.42 |
+| 31–60 min         |     432.15 |       33.04 |   60.68 |    27.09 |     34.56 |           42.44 |           13.67 |
+| 61–120 min        |     564.28 |       43.7  |   95.62 |    32.61 |     40.69 |           56.51 |           18.51 |
+| 120+ min          |     547.51 |       39.85 |   68.84 |    47.69 |     57.29 |           48.27 |           15.66 |
 
+Significance: We wanted to build this pivot table in order to do some exploratory data analysis. We wanted to uncover interesting patters or insights in our datasets. From this we could see if calories were impacted by how long something needed to cook. A lot of south asian dishes require extended prep times so we wanted to see if general prep time of many different recipes had any impact on calories. We didn't see any inherent patterns but we saw that sodium content was pretty high. 
 
 <h3> Imputation </h3>
 
