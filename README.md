@@ -408,17 +408,18 @@ We decided to not impute `rating` and `avg_rating` as these values were integral
 <h3>Prediction Problem</h3>
 We are aiming to predict the calorie content of a recipe based on it's nutritional components (example: 
 total fat, sugar, carbohydrates, etc.)
+We chose to use nutritional components as our features as this information is available to us from the dataset itself. 
 
 <h3>Problem Type</h3>
 This is a regression problem because the target, calories, is a continuous numeric value.
 
 <h3>Response Variable</h3>
-The response variable we chose is calories. We chose calories because it is an important indicator for indivudals who are tracking their diets for health, fitness, or medical reasons. Understanding how different nutritional components impact calories can give a more hollistic view to eating healthier. 
+The response variable we chose is calories. We chose calories because it is an important indicator for indivudals who are tracking their diets for health, fitness, or medical reasons. Understanding how different nutritional components impact calories can give a more hollistic view to eating healthier. We also chose this as oftentimes south asian food has a lot of hidden calories and through these prediction models we hoped to see healthier recipes as people add their recipes and its nutritional components. 
 
 <h3>Evaluation Metric</h3>
 We will be using Mean Absolute Error (MAE), to evaluate our model. It will tell us, on average, how many calories our model's predictions are off by. MAE treats all errors equally. 
 
-We will also use Root Mean Square Error (RMSE) as it provides an overall sense of prediction error, but will keep in mind that it is weighted more towards large error. 
+We will also use Mean Square Error (MSE) as it provides an overall sense of prediction error, but will keep in mind that it is weighted more towards large error. 
 
 We will not look at the R^2 score as it isn't intiuative for users, and provides a value which is unitless. 
 
